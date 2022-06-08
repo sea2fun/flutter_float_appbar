@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  bool _showFab = true;
+  bool _showAppBar = true;
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
           final ScrollDirection direction = notification.direction;
           setState(() {
             if (direction == ScrollDirection.reverse) {
-              _showFab = false;
+              _showAppBar = false;
             } else if (direction == ScrollDirection.forward) {
-              _showFab = true;
+              _showAppBar = true;
             }
           });
           return true;
@@ -71,10 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 0.0,
                   child: AnimatedSlide(
                     duration: duration,
-                    offset: _showFab ? Offset.zero : const Offset(0.0, 0.0),
+                    offset: _showAppBar ? Offset.zero : const Offset(0.0, 0.0),
                     child: AnimatedOpacity(
                       duration: duration,
-                      opacity: _showFab ? 1 : 0,
+                      opacity: _showAppBar ? 1 : 0,
                       child: Container(
                         margin: const EdgeInsets.all(paddingAppBar),
                         padding: const EdgeInsets.all(paddingAppBar),
